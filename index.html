@@ -135,7 +135,7 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h3> Perturb a Gaussian </h3>
+                <h3> Perturb a random Gaussian and the </h3>
                 <video id="co3d-grid" width="100%" autoplay loop muted controls>
                     <source src="assets/videos/teaser_videos/teaser_video.mp4" type="video/mp4" />
                 </video>
@@ -151,7 +151,7 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                    Realistic object interactions are crucial for creating immersive virtual experiences, yet synthesizing realistic 3D object dynamics in response to novel interactions remains a significant challenge. Unlike unconditional or text-conditioned dynamics generation, action-conditioned dynamics requires perceiving the physical material properties of objects and grounding the 3D motion prediction on these properties, such as object stiffness. However, estimating physical material properties is an open problem due to the lack of material ground-truth data, as measuring these properties for real objects is highly difficult. We present PhysDreamer, a physics-based approach that endows static 3D objects with interactive dynamics by leveraging the object dynamics priors learned by video generation models. By distilling these priors, PhysDreamer enables the synthesis of realistic object responses to novel interactions, such as external forces or agent manipulations. We demonstrate our approach on diverse examples of elastic objects and evaluate the realism of the synthesized interactions through a user study. PhysDreamer takes a step towards more engaging and realistic virtual experiences by enabling static 3D objects to dynamically respond to interactive stimuli in a physically plausible manner.
+                    3D Gaussians, as a low-level scene representation, typically involve thousands to millions of Gaussians. This makes it difficult to control the scene in ways that reflect the underlying dynamic structure, where the number of independent entities is typically much smaller. In particular, it can be challenging to animate and move objects in the scene, which requires coordination among many Gaussians. To address this issue, we develop a mutual information shaping technique that enforces movement resonance between correlated Gaussians in a motion network. Such correlations can be learned from putative 2D object masks in different views. By approximating the mutual information with the Jacobians of the motions, our method ensures consistent movements of the Gaussians composing different objects under various perturbations. In particular, we develop an efficient contrastive training pipeline with lightweight optimization to shape the motion network, avoiding the need for re-shaping throughout the motion sequence. Notably, our training only touches a small fraction of all Gaussians in the scene yet attains the desired compositional behavior according to the underlying dynamic structure. The proposed technique is evaluated on challenging scenes and demonstrates significant performance improvement in promoting consistent movements and 3D object segmentation while inducing low computation and memory requirements.
                 </p>
             </div>
         </div>
@@ -387,12 +387,11 @@
                 </h3>
                 <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
-@article{zhang2024physdreamer,
-    title={{PhysDreamer}: Physics-Based Interaction with 3D Objects via Video Generation},
-    author={Tianyuan Zhang and Hongxing-Yu and Rundi Wu and
-            Brandon Y. Feng and Changxi Zheng and Noah Snavely and Jiajun Wu and William T. Freeman},
-    journal={arxiv},
-    year={2024}
+@article{zhang2024infogaussian,
+  title={InfoGaussian: Structure-Aware Dynamic Gaussians through Lightweight Information Shaping},
+  author={Zhang, Yunchao and Yang, Guandao and Guibas, Leonidas and Yang, Yanchao},
+  journal={arXiv preprint arXiv:2406.05897},
+  year={2024}
 }</textarea>
                 </div>
             </div> -->
@@ -402,26 +401,20 @@
                     <h3>Citation</h3>
                     <div class="form-group">
                         <textarea id="bibtex" class="form-control" readonly aria-label="BibTeX Citation for Copying" onclick="this.select();" onfocus="this.select();" style="height: 160px;">
-    @article{zhang2024physdreamer,
-        title={{PhysDreamer}: Physics-Based Interaction with 3D Objects via Video Generation},
-        author={Tianyuan Zhang and Hong-Xing Yu and Rundi Wu and
-                Brandon Y. Feng and Changxi Zheng and Noah Snavely and Jiajun Wu and William T. Freeman},
-        journal={arxiv},
-        year={2024}
-    }</textarea>
+                            @article{zhang2024infogaussian,
+                                title={InfoGaussian: Structure-Aware Dynamic Gaussians through Lightweight Information Shaping},
+                                author={Zhang, Yunchao and Yang, Guandao and Guibas, Leonidas and Yang, Yanchao},
+                                journal={arXiv preprint arXiv:2406.05897},
+                                year={2024}
+                              }</textarea>
 </div>
 </div>
 </div>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Acknowledgements
-                </h3>
-                <p class="text-justify">
-                    We would like to thank Peter Yichen Chen, Zhengqi Li, Pingchuan Ma, Minghao Guo, Ge Yang, and Shai Avidan for their help and  insightful discussions. This work is in part supported by the NSF PHY-2019786 (The NSF AI Institute for Artificial Intelligence and Fundamental Interactions), RI #2211258, #2338203, ONR MURI N00014-22-1-2740, Quanta Computer, and Samsung
-                    <br><br>
-                The website template was borrowed from <a href="https://reconfusion.github.io/">ReconFusion</a>, <a href="https://dorverbin.github.io/refnerf">Ref-NeRF</a> and <a href="https://tianweiy.github.io/dmd/">DMD</a>.
+                <br>
+                The website template was borrowed from <a href="https://reconfusion.github.io/">ReconFusion</a> and <a href="https://physdreamer.github.io/">PhysDreamer</a>.
                 </p>
             </div>
         </div>
